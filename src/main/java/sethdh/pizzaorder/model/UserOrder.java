@@ -1,16 +1,25 @@
 package sethdh.pizzaorder.model;
 
+import java.util.List;
+
 public class UserOrder {
     String fName;
     String lName;
     String phoneNumber;
     String address;
 
-    public UserOrder(String fName, String lName, String phoneNumber, String address) {
+    //pizza building
+    String deliveryType;
+    String pizzaSize;
+
+
+    public UserOrder(String fName, String lName, String phoneNumber, String address, String deliveryType) {
         this.fName = fName;
         this.lName = lName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.deliveryType = deliveryType;
+        this.pizzaSize = pizzaSize;
     }
 
     public String getfName() {
@@ -43,6 +52,22 @@ public class UserOrder {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getDeliveryType() {
+        return deliveryType;
+    }
+
+    public void setDeliveryType(String deliveryType) {
+        this.deliveryType = deliveryType;
+    }
+
+    public String getPizzaSize() {
+        return pizzaSize;
+    }
+
+    public void setPizzaSize(String pizzaSize) {
+        this.pizzaSize = pizzaSize;
     }
 }
 
