@@ -6,64 +6,6 @@
 </head>
 <body>
   <h1>Welcome to the pizza website</h1>
-  <form action="#" th:action="@{/submitOrder}" th:object="${userOrder}" method="post">
 
-      <label for="user_fname">First Name</label>
-      <input type="text" id="user_fname" name="user_fname" th:feild="*{fName}">
-      <br>
-      <label for="user_lname">Last Name</label>
-      <input type="text" id="user_lname" name="user_lname" th:feild="*{lName}">
-      <br>
-      <label for="user_phone">Phone Number</label>
-      <input type="text" id="user_phone" name="user_phone" th:feild="*{phoneNumber}">
-      <br>
-      <label for="user_address">Delivery Address</label>
-      <input type="text" id="user_address" name="user_address" th:feild="*{address}">
-      <br>
-      <br>
-      <br>
-
-      <div id="pizza_building">
-          <h2>Build Your Pizza</h2>
-
-          <label for="ordertype">what is this order for</label>
-          <select id="ordertype" th:feild="*{deliveryType}">
-              <option th:value="'p'">pickup</option>
-              <option th:value="'d'">delivery</option>
-          </select>
-
-          <h3>1 - choose your size</h3>
-          <input type="radio" id="small" name="pizza_size">
-          <label for="small">Small - $10</label><br>
-          <input type="radio" id="medium" name="pizza_size">
-          <label for="medium">Medium - $13</label><br>
-          <input type="radio" id="large" name="pizza_size">
-          <label for="large">Large - $17</label><br>
-
-          <h3>2 - add your protein (+ $1 ea.)</h3>
-          <input type="checkbox" id="peperoni">
-          <label for="peperoni">Peperoni</label><br>
-          <input type="checkbox" id="sausage">
-          <label for="sausage">Sausage</label><br>
-          <input type="checkbox" id="bacon">
-          <label for="bacon">Bacon</label><br>
-          <input type="checkbox" id="chicken">
-          <label for="chicken">Chicken</label><br>
-
-          <h3>3 - add the veggies (+ $1 ea.)</h3>
-          <input type="checkbox" id="peppers">
-          <label for="peppers">Peppers</label><br>
-          <input type="checkbox" id="onions">
-          <label for="onions">Onions</label><br>
-          <input type="checkbox" id="tomatoes">
-          <label for="tomatoes">Tomatoes</label><br>
-          <input type="checkbox" id="mushrooms">
-          <label for="mushrooms">Mushrooms</label><br>
-
-      </div>
-
-      <input type="submit" title="Submit Order">
-
-  </form>
 </body>
 </html>
