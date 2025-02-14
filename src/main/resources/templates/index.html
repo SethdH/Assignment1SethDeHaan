@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Order Pizza</title>
 </head>
 <body>
   <h1>Welcome to the pizza website</h1>
+  <form action="#" th:action="@{/SubmitOrder}" method="post" class="text-center">
+      <div name="userInfo" class="m-5">
+            <h2 class="m-4">User Info</h2>
+          <label for="first_name">First Name:</label>
+          <input type="text" id="first_name" name="firstName" th:feild="${user.firstName} " class="m-3">
+          <br>
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="lastName" th:feild="${user.lastName}" class="m-3">
+          <br>
+          <label for="phone_num">Phone Number:</label>
+          <input type="text" id="phone_num" name="phoneNumber" th:feild="${user.phoneNumber}" class="m-3">
+          <br>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" th:feild="${user.address}" class="m-3">
 
+      </div>
+
+      <div name="Order Info">
+            <h2>Order Info</h2>
+          <label for="order_type">Pickup or Delivery:</label><br>
+          <select id="order_type" name="orderType" th:feild="${order.orderType}">
+              <option th:value="Pickup">Pickup</option>
+              <option th:value="Delivery">Delivery</option>
+          </select>
+          <br>
+          <input type="radio" id="small" name="orderSize" th:feild="${order.orderSize}" th:value="Small">
+          <label for="small">Small</label>
+          <input type="radio" id="medium" name="orderSize" th:feild="${order.orderSize}" th:value="Medium">
+          <label for="medium">Medium</label>
+          <input type="radio" id="large" name="orderSize" th:feild="${order.orderSize}" th:value="Large">
+          <label for="large">Large</label>
+          <br>
+          <input type="checkbox" id="has_pepperoni" name="hasPepperoni" th:feild="${order.hasPepperoni}">
+          <label for="has_pepperoni">Pepperoni</label>
+          <br>
+          <input type="checkbox" id="has_bacon" name="hasBacon" th:feild="${order.hasBacon}">
+          <label for="has_bacon">Bacon</label>
+          <br>
+          <input type="checkbox" id="has_pineapple" name="hasPineapple" th:feild="${order.hasPineapple}">
+          <label for="has_pineapple">Pineapple</label>
+          <br>
+          <input type="checkbox" id="has_peppers" name="hasPeppers" th:feild="${order.hasPeppers}" >
+          <label for="has_peppers">Sweet Peppers</label>
+          <br>
+          <input type="checkbox" id="has_onions" name="hasOnions" th:feild="${order.hasOnions}">
+          <label for="has_onions">Onions</label>
+          <br>
+          <input type="checkbox" id="has_mushrooms" name="hasMushrooms" th:feild="${order.hasMushrooms}">
+          <label for="has_mushrooms">Mushrooms</label>
+          <br>
+          <label for="num_of_pizzas">Number of Pizzas:</label>
+          <input type="number" id="num_of_pizzas" name="numOfPizzas" th:feild="${order.numOfPizzas}" value="0">
+
+      </div>
+    <input type="submit" title="Submit Order" class="btn btn-secondary">
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Receipt</title>
 </head>
 <body>
-  <h1>Receipt</h1>
+  <h1>Receipt:</h1>
+<p>Name:</p>
+<p th:text="${user.firstName}">John</p>
+<p th:text="${user.lastName}">Doe</p>
+<p>Phone Number:</p>
+<p th:text="${user.phoneNumber}">420-420-6969</p>
+<p>Address:</p>
+<p th:text="${user.address}">123 Somewhere ST.</p>
+
+<h2>Orders:</h2>
+  <table class="p-3">
+      <tr>
+          <th>Order type</th>
+          <th>Size</th>
+          <th></th>
+          <th>Pepperoni</th>
+          <th>Bacon</th>
+          <th>Pineapple</th>
+          <th>Peppers</th>
+          <th>Onions</th>
+          <th>Mushrooms</th>
+          <th>Total Price</th>
+      </tr>
+
+      <tr th:each="order : ${orders}">
+          <td th:text="${order.orderType}"> </td>
+          <td th:text="${order.orderSize}"></td>
+          <td> </td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasPepperoni}"></td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasBacon}"></td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasPineapple}"></td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasPeppers}"></td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasOnions}"></td>
+          <td><input type="checkbox" disabled="true" th:checked="${order.hasMushrooms}"></td>
+          <td th:text="${order.totalPrice}"></td>
+      </tr>
+  </table>
+
+  <a href="/OnlinePizza">Back to Order</a>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
