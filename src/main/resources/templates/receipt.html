@@ -16,33 +16,35 @@
 <p th:text="${user.address}">123 Somewhere ST.</p>
 
 <h2>Orders:</h2>
-  <table class="p-3">
-      <tr>
-          <th>Order type</th>
-          <th>Size</th>
-          <th></th>
-          <th>Pepperoni</th>
-          <th>Bacon</th>
-          <th>Pineapple</th>
-          <th>Peppers</th>
-          <th>Onions</th>
-          <th>Mushrooms</th>
-          <th>Total Price</th>
-      </tr>
+  <div class="m-4">
+      <table>
+          <tr>
+              <th>Order type</th>
+              <th>Size</th>
+              <th></th>
+              <th>Pepperoni</th>
+              <th>Bacon</th>
+              <th>Pineapple</th>
+              <th>Peppers</th>
+              <th>Onions</th>
+              <th>Mushrooms</th>
+              <th>Total Price</th>
+          </tr>
 
-      <tr th:each="order : ${orders}">
-          <td th:text="${order.orderType}"> </td>
-          <td th:text="${order.orderSize}"></td>
-          <td> </td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasPepperoni}"></td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasBacon}"></td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasPineapple}"></td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasPeppers}"></td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasOnions}"></td>
-          <td><input type="checkbox" disabled="true" th:checked="${order.hasMushrooms}"></td>
-          <td th:text="${order.totalPrice}"></td>
-      </tr>
-  </table>
+          <tr th:each="order : ${orders}">
+              <td th:text="${order.orderType}"> </td>
+              <td th:text="${order.orderSize}"></td>
+              <td> </td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasPepperoni}"></td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasBacon}"></td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasPineapple}"></td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasPeppers}"></td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasOnions}"></td>
+              <td><input type="checkbox" disabled="true" th:checked="${order.hasMushrooms}"></td>
+              <td th:text="${order.totalPrice}"></td>
+          </tr>
+      </table>
+  </div>
 
   <a href="/OnlinePizza">Back to Order</a>
 
